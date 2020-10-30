@@ -1,0 +1,10 @@
+.is-done{
+    text-decoration: line-through;
+}
+button{
+    margin: 0 8px;
+}
+li{
+    display: flex;
+    align-items: center;
+}
