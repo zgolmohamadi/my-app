@@ -25,11 +25,22 @@ export default class App extends Component {
     });
   }
   keyPress(e) {
-    if (this.state.value != "" && e.keyCode == 13) {
-      this.setState({
-        list: [...this.state.list, this.state.value],
-        value: "",
-      });
+    if (this.state.value != "" && e.keyCode == 13 ) {
+      if(this.state.editMode){
+        let newarr = this.state.list;
+        newarr[this.state.editIndex] = this.state.value;
+        this.setState({
+          list: newarr,
+          editMode: false,
+          value: "",
+        });
+      }else{
+        this.setState({
+          list: [...this.state.list, this.state.value],
+          value: "",
+        });
+      }
+     
     }
   }
 
